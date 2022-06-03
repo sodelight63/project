@@ -55,11 +55,11 @@ if (isset($_POST['edit_emp'])) {
         $query_execute = $stmt->execute($data);
         if ($query_execute) {
             $_SESSION['message'] = "แก้ไขข้อมูลสำเร็จ";
-            header('Location: index.php');
+            header('Location: index_emp.php');
             exit(0);
         } else {
             $_SESSION['message'] = "แก้ไขข้อมูลไม่สำเร็จ";
-            header('Location: index.php');
+            header('Location: index_emp.php');
             exit(0);
         }
     } catch (PDOException $e) {
