@@ -9,7 +9,7 @@ include('conn.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>แก้ไขข้อมูล</title>
 </head>
 
@@ -20,45 +20,45 @@ include('conn.php');
                 <div class="card">
                     <div class="card-header">
                         <h3>แก้ไขข้อมูลลูกค้า
-                            <a href="index.emp.php" class="btn btn-danger float-end">ย้อนกลับ</a>
+                            <a href="index_emp.php" class="btn btn-danger float-end">ย้อนกลับ</a>
                         </h3>
                     </div>
                     <div class="card-body">
                         <?php
-                        if(isset($_GET['customer_id'])){
-                            $customer_id = $_GET['customer_id'];
-                            $query = "SELECT * FROM customer WHERE customer_id =:customer_id";
+                        if(isset($_GET['employee_id'])){
+                            $employee_id = $_GET['employee_id'];
+                            $query = "SELECT * FROM employee WHERE employee_id =:employee_id";
                             $stmt = $conn->prepare($query);
-                            $data = [':customer_id'=> $customer_id];
+                            $data = [':employee_id'=> $employee_id];
                             $stmt->execute($data);
 
                             $result = $stmt->fetch(PDO::FETCH_ASSOC);
                         }
                         ?>
                         <form action="crud.php" method="POST">
-                            <input type="hidden" name="customer_id" value="<?=$result['customer_id']?>">
+                            <input type="hidden" name="employee_id" value="<?=$result['employee_id']?>">
                             <div class="mb-3">
                                 <label>Name</label>
-                                <input type="text" name="name_ct" class="form-control" value="<?=$result['name_ct']?>"/>
+                                <input type="text" name="name_emp" class="form-control" value="<?=$result['name_emp']?>"/>
                             </div>
                             <div class="mb-3">
                                 <label>Surname</label>
-                                <input type="text" name="surname_ct" class="form-control" value="<?=$result['surname_ct']?>"/>
+                                <input type="text" name="surname_emp" class="form-control" value="<?=$result['surname_emp']?>"/>
                             </div>
                             <div class="mb-3">
                                 <label>Phone</label>
-                                <input type="text" name="phone_ct" class="form-control" value="<?=$result['phone_ct']?>"/>
+                                <input type="text" name="phone_emp" class="form-control" value="<?=$result['phone_emp']?>"/>
                             </div>
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="text" name="email_ct" class="form-control" value="<?=$result['email_ct']?>"/>
+                                <input type="text" name="email_emp" class="form-control" value="<?=$result['email_emp']?>"/>
                             </div>
                             <div class="mb-3">
                                 <label>Address</label>
-                                <input type="text" name="adress_ct" class="form-control" value="<?=$result['adress_ct']?>" />
+                                <input type="text" name="adress_emp" class="form-control" value="<?=$result['adress_emp']?>" />
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="edit_cus" class="btn btn-primary">แก้ไขข้อมูล</button>
+                                <button type="submit" name="edit_emp" class="btn btn-primary">แก้ไขข้อมูล</button>
                             </div>
                         </form>
 
@@ -68,7 +68,7 @@ include('conn.php');
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
