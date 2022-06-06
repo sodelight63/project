@@ -38,23 +38,23 @@ include('conn.php');
                         <form action="crud.php" method="POST">
                             <input type="hidden" name="employee_id" value="<?=$result['employee_id']?>">
                             <div class="mb-3">
-                                <label>Name</label>
+                                <label>ชื่อ</label>
                                 <input type="text" name="name_emp" class="form-control" value="<?=$result['name_emp']?>"/>
                             </div>
                             <div class="mb-3">
-                                <label>Surname</label>
+                                <label>นามสกุล</label>
                                 <input type="text" name="surname_emp" class="form-control" value="<?=$result['surname_emp']?>"/>
                             </div>
                             <div class="mb-3">
-                                <label>Phone</label>
+                                <label>เบอร์โทร</label>
                                 <input type="text" name="phone_emp" class="form-control" value="<?=$result['phone_emp']?>"/>
                             </div>
                             <div class="mb-3">
-                                <label>Email</label>
+                                <label>อีเมล</label>
                                 <input type="text" name="email_emp" class="form-control" value="<?=$result['email_emp']?>"/>
                             </div>
                             <div class="mb-3">
-                                <label>Address</label>
+                                <label>ที่อยู่</label>
                                 <input type="text" name="adress_emp" class="form-control" value="<?=$result['adress_emp']?>" />
                             </div>
                             <div class="mb-3">
